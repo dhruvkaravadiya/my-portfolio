@@ -31,3 +31,39 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.marquee {
+  height: 40px;
+  width: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee > div {
+  display: flex;
+  padding-top: 5px;
+  width: 200%;
+  height: 30px;
+  position: absolute;
+  overflow: hidden;
+  animation: marquee 8s linear infinite;
+}
+
+.marquee > div > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+
+/* CSS */
+.min-h-screen-60 {
+  min-height: calc(100vh - 60px);
+}
