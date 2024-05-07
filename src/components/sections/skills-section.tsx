@@ -13,8 +13,8 @@ const icons = [
 const IconGrid = () => {
     return (
       <section className="bg-white">
-        <div className="py-8 px-4 mx-auto max-w-screen-lg sm:py-16 lg:px-6 flex flex-col items-center">
-          <h2 className="mb-4 text-4xl font-extrabold text-black">My Top Skills</h2>
+        <div className="py-8 px-4 mx-auto max-w-screen-lg sm:py-16 lg:px-6 flex flex-col gap-6 items-center">
+          <h2 className="mb-12 text-4xl font-extrabold text-black">My Top Skills</h2>
           <div className="flex flex-wrap justify-center">
             {icons.map((item, index) => (
               <a

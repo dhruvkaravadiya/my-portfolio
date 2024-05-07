@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa6";
 export default function HeroSection() {
     return (
-        <section className="bg-white min-h-screen-60 flex justify-center h-full">
+        <section className="bg-white min-h-screen-60  flex justify-center h-full">
             <div className="grid items-center  max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
                 <div className="mr-auto place-self-center lg:col-span-7">
                     <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-black">Hi ! I am <br /> Dhruv Karavadiya</h1>
