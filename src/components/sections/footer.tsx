@@ -1,34 +1,40 @@
 import React from "react";
-
+import { IoArrowForwardOutline } from "react-icons/io5";
+import { FaGithub } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { FaLinkedinIn } from "react-icons/fa6";
 export default function Footer() {
-return (<footer className="flex flex-col space-y-10 justify-center m-10">
-
-<nav className="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
-    <a className="hover:text-gray-900" href="#">Home</a>
-    <a className="hover:text-gray-900" href="#">About</a>
-    <a className="hover:text-gray-900" href="#">Services</a>
-    <a className="hover:text-gray-900" href="#">Media</a>
-    <a className="hover:text-gray-900" href="#">Gallery</a>
-    <a className="hover:text-gray-900" href="#">Contact</a>
-</nav>
-
-<div className="flex justify-center space-x-5">
-    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
-    </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
-    </a>
-    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
-    </a>
-    <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
-    </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
-    </a>
-</div>
-<p className="text-center text-gray-700 font-medium">&copy; 2022 Company Ltd. All rights reservered.</p>
-</footer>);
+    return (
+        <footer className="border bg-slate-100">
+            <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+                <div className="flex justify-center items-center gap-6 flex-col">
+                    <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Incidunt consequuntur amet culpa cum itaque neque.
+                    </p>
+                    <div className="flex justify-start gap-4 bg-gray-200 p-2 px-4 rounded-full">
+                        <a href="https://www.github.com/dhruvkaravadiya">
+                            <FaGithub className="fill-slate-700 hover:fill-black cursor-pointer h-6 w-6" />
+                        </a>
+                        <a href="https://www.twitter.com/DhruvKaravadiya">
+                            <BsTwitterX className="fill-slate-700 hover:fill-black cursor-pointer h-6 w-6" />
+                        </a>
+                        <a href="mailto:dhruvkaravadiya.work@gmail.com">
+                            <MdEmail className="fill-slate-700 hover:fill-black cursor-pointer h-6 w-6" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/dhruvkaravadiya/">
+                            <FaLinkedinIn className="fill-slate-700 hover:fill-black cursor-pointer h-6 w-6" />
+                        </a>{" "}
+                    </div>
+                    <div className="border-top p-4 w-full lg:h-20 text-gray-600 flex items-center justify-center">
+                        Made With &nbsp;{" "}
+                        <b>
+                            <i> Next.js, NextUI, TailwindCSS, TypeScript</i>
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
 }
