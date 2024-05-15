@@ -39,12 +39,14 @@ export default function HeroSection() {
                             <FaLinkedinIn className="fill-slate-700 hover:fill-black cursor-pointer h-6 w-6" />
                         </a>
                     </div>
-                    <Button
-                        className="bg-transparent text-md font-medium border-2 shadow-lg border-slate-800 min-h-4 h-12 md:me-14 text-black"
-                        endContent={<IoArrowForwardOutline />}
-                    >
-                        Hire Now
-                    </Button>
+                    <a href="mailto:dhruvkaravadiya.work@gmail.com">
+                        <Button
+                            className="bg-transparent text-md font-medium border-2 shadow-lg border-slate-800 min-h-4 h-12 md:me-14 text-black"
+                            endContent={<IoArrowForwardOutline />}
+                        >
+                            Hire Now
+                        </Button>
+                    </a>
                 </div>
                 <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
                     <img

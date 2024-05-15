@@ -1,5 +1,4 @@
 import React from "react";
-import { IoArrowForwardOutline } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
