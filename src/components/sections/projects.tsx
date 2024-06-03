@@ -61,15 +61,14 @@ const cards = [
 
 const Projects = () => {
     return (
+
         <div className="py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6 flex flex-col justify-center items-center p-2">
             <div className="max-w-screen-md flex flex-col items-center mb-3 lg:mb-6">
                 <h2 className="mb-4 text-4xl font-extrabold text-black ">
-                    Designed for business teams like yours
+                    Projects
                 </h2>
                 <p className="text-gray-500 sm:text-xl">
-                    Here at Flowbite we focus on markets where technology,
-                    innovation, and capital can unlock long-term value and drive
-                    economic growth.
+                    Here is a showcase of my projects I have worked on.
                 </p>
             </div>
             <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 lg:w-8/12 md:w-10/12 p-4 md:p-2 xl:p-5">

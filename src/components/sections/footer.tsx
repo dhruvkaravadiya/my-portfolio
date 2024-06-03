@@ -9,8 +9,7 @@ export default function Footer() {
             <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
                 <div className="flex justify-center items-center gap-6 flex-col">
                     <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Incidunt consequuntur amet culpa cum itaque neque.
+                        Connect with me!!
                     </p>
                     <div className="flex justify-start gap-4 bg-gray-200 p-2 px-4 rounded-full">
                         <a href="https://www.github.com/dhruvkaravadiya">
