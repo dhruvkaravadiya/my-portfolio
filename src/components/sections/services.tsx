@@ -2,11 +2,14 @@ import React from "react";
 import { RiSettings3Fill } from "react-icons/ri";
 import { PiPaintBrushBroadFill } from "react-icons/pi";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
+import SectionHeading from "@/components/section-heading";
 
 interface FeatureProps {
-    title: String;
-    description: String;
-    icon: JSX.Element; // Define the type for the icon prop
+    index: number;
+    title: string;
+    description: string;
+    tags: string[];
+    icon: JSX.Element;
 }
 
 const features = [
@@ -14,61 +17,75 @@ const features = [
         title: "Front End Development",
         description:
             "Crafting responsive and user-friendly websites using cutting-edge technologies such as React.js, Tailwind CSS, and Next.js. We leverage a variety of UI libraries like Material UI, Daisy UI, Shad-cn, Nextui, Bootstrap, and more to ensure your website stands out and delivers an exceptional user experience.",
-        icon: <PiPaintBrushBroadFill className="h-10 w-10 fill-white" />,
+        tags: ["React.js", "Tailwind CSS", "Next.js", "Shadcn UI"],
+        icon: <PiPaintBrushBroadFill className="h-6 w-6 fill-cream" />,
     },
     {
         title: "Landing Pages, Blogs, and E-commerce Sites",
         description:
             "Excel in building lightning-fast, secure, and intuitive landing pages, blogs, and e-commerce sites. Whether showcasing your brand, sharing engaging content, or selling products online, our solutions leave a lasting impression and drive results.",
-        icon: <LiaLaptopCodeSolid className="h-10 w-10 fill-white" />,
+        tags: ["Landing Pages", "Blogs", "E-commerce"],
+        icon: <LiaLaptopCodeSolid className="h-6 w-6 fill-cream" />,
     },
     {
         title: "API Development",
         description:
             "Specializing in developing robust and scalable APIs using state-of-the-art technologies like Node.js, Express, and MongoDB. Our expertise ensures your APIs are reliable, efficient, and capable of meeting the demands of your applications, facilitating seamless communication and data exchange.",
-        icon: <RiSettings3Fill className="h-10 w-10 fill-white" />,
+        tags: ["Node.js", "Express", "MongoDB"],
+        icon: <RiSettings3Fill className="h-6 w-6 fill-cream" />,
     },
 ];
 
-const Feature = ({ title, description, icon }: FeatureProps) => (
-    <div className="p-4 max-w-sm">
-        <div className="flex gap-3 rounded-lg h-full  p-4 flex-col">
-            <div className="flex  flex-row gap-2 items-start mb-3">
-                <div className="w-12 h-12 mr-3 inline-flex bg-slate-800 p-2 items-center justify-center rounded-full text-white flex-shrink-0">
-                    {icon}
-                </div>
-                <h2 className="text-slate-800 text-lg font-semibold">
-                    {title}
-                </h2>
+const Feature = ({ index, title, description, tags, icon }: FeatureProps) => (
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start border-t-2 border-ink py-8 group hover:bg-white/60 transition-colors">
+        <div className="md:col-span-1 flex md:block items-center gap-3">
+            <span className="font-mono text-sm text-signal-dark">0{index}</span>
+        </div>
+        <div className="md:col-span-1">
+            <div className="w-12 h-12 flex items-center justify-center bg-ink group-hover:bg-signal transition-colors">
+                {icon}
             </div>
-            <p className="leading-relaxed text-base text-slate-800">
-                {description}
-            </p>
+        </div>
+        <div className="md:col-span-6">
+            <h3 className="font-display text-xl uppercase tracking-tight text-ink mb-2">
+                {title}
+            </h3>
+            <p className="leading-relaxed text-sm text-muted">{description}</p>
+        </div>
+        <div className="md:col-span-4 flex flex-wrap gap-2 md:justify-end content-start">
+            {tags.map((tag) => (
+                <span
+                    key={tag}
+                    className="font-mono text-[10px] uppercase tracking-wide border-2 border-ink text-ink px-2 py-1"
+                >
+                    {tag}
+                </span>
+            ))}
         </div>
     </div>
 );
 
 export default function Services() {
     return (
-        <div className="mb-14 flex flex-col items-center p-6 w-auto justify-center mt-10 gap-4">
-            <div className="max-w-screen-md flex flex-col items-center w-full mb-3 lg:mb-6">
-                <h2 className="mb-4 text-4xl font-extrabold text-black">
-                    Services
-                </h2>
-                <p className="text-gray-500 sm:text-xl">
-                    I provide a wide range of services to help you achieve your
-                    goals.
-                </p>
-            </div>
-            <div className="flex flex-wrap bg-white p-8 rounded-2xl shadow-2xl">
-                {features.map((feature, index) => (
-                    <Feature
-                        key={index}
-                        title={feature.title}
-                        description={feature.description}
-                        icon={feature.icon}
-                    />
-                ))}
+        <div className="bg-cream py-16 md:py-24 px-4 md:px-8 border-b-[3px] border-ink">
+            <div className="max-w-screen-xl mx-auto">
+                <SectionHeading
+                    eyebrow="What I Do"
+                    title="Services"
+                    subtitle="I provide a wide range of services to help you achieve your goals."
+                />
+                <div className="flex flex-col mt-12 border-b-2 border-ink">
+                    {features.map((feature, index) => (
+                        <Feature
+                            key={feature.title}
+                            index={index + 1}
+                            title={feature.title}
+                            description={feature.description}
+                            tags={feature.tags}
+                            icon={feature.icon}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

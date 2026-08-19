@@ -7,27 +7,11 @@ html {
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 17, 17, 17;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -36,10 +20,25 @@ body {
   }
 }
 
+/* ---------- Eyebrow / section label ---------- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6e6e68;
+}
 
+.eyebrow::before {
+  content: "// ";
+  color: #2b3aff;
+}
+
+/* ---------- Availability ticker (mobile) ---------- */
 .marquee {
   height: 40px;
-  width: 360px;
+  width: 320px;
   overflow: hidden;
   position: relative;
 }
@@ -66,8 +65,31 @@ body {
   100% { left: -100%; }
 }
 
-
-/* CSS */
 .min-h-screen-60 {
   min-height: calc(100vh - 60px);
+}
+
+/* ---------- Skills ticker tape ---------- */
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------- Corner-notched brutalist tile ---------- */
+.notch {
+  clip-path: polygon(
+    0 12px, 12px 0,
+    100% 0, 100% calc(100% - 12px),
+    calc(100% - 12px) 100%, 0 100%
+  );
 }

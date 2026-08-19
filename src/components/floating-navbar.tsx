@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import { Button, ButtonGroup } from "@nextui-org/button";
 
 export default function FloatingNavbar() {
-    const handleMenuItemClick = (sectionId: any) => {
+    const handleMenuItemClick = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
@@ -11,24 +10,21 @@ export default function FloatingNavbar() {
     };
     const menuItems = ["About", "Projects", "Skills", "Services", "Contact"];
     return (
-
-        <ButtonGroup radius="full" className="bg-white  ">
-
-            {menuItems.map((item, index) => (
-                <Button key={`${item}-${index}`} className="text-black bg-white font-medium">
-                    <a
-                        key={`${item}-${index}`}
-                        className=""
-                        href={`#${item.toLowerCase()}`}
-                        onClick={() => handleMenuItemClick(item.toLowerCase())} 
-                    >
-                        {item}
-                    </a>
-                </Button>
+        <div className="flex items-center gap-1 bg-ink px-2 py-2 border-2 border-ink shadow-hard-signal">
+            {menuItems.map((item) => (
+                <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleMenuItemClick(item.toLowerCase());
+                    }}
+                    className="group text-cream text-xs font-mono uppercase tracking-wide px-4 py-2 hover:bg-signal hover:text-ink transition-colors flex items-center gap-1.5"
+                >
+                    <span className="text-signal group-hover:text-ink">·</span>
+                    {item}
+                </a>
             ))}
-
-        </ButtonGroup>
-
+        </div>
     );
 }
-
