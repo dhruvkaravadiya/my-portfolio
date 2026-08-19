@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dhruv's Portfolio
+
+A responsive personal portfolio built to present projects, technical skills, services, and ways to get in touch in one focused, interactive experience.
+
+The site uses a clean visual system, animated UI details, responsive navigation, and reusable section components to keep the presentation polished on both large and small screens.
+
+## Highlights
+
+- Hero section introducing the portfolio and personal brand
+- Project showcase with dedicated project cards
+- Skills section for presenting the technology toolkit
+- Services section describing areas of expertise
+- Responsive top navigation and floating navigation on larger screens
+- Animated marquee and motion effects powered by Framer Motion
+- Reusable UI components styled with Tailwind CSS and NextUI
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 14 with the App Router
+- [React](https://react.dev/) 18
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [NextUI](https://nextui.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17 or newer
+- npm, yarn, pnpm, or Bun
+
+### Installation
+
+Clone the repository, move into the project directory, and install dependencies:
+
+```bash
+git clone <your-repository-url>
+cd my-portfolio
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser. The page will refresh automatically as you edit the source files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts the development server |
+| `npm run build` | Creates an optimized production build |
+| `npm start` | Runs the production build locally |
+| `npm run lint` | Runs the Next.js lint command |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/
+│   ├── globals.css       # Global styles and Tailwind layers
+│   ├── layout.tsx        # Root layout and metadata
+│   └── page.tsx          # Portfolio page composition
+├── assets/               # Local visual assets
+└── components/
+	├── sections/         # Hero, projects, skills, services, stats, and footer
+	└── *.tsx             # Shared navigation and UI components
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Most portfolio content can be updated in the components under [`src/components/sections`](src/components/sections). The main page composition and section anchors live in [`src/app/page.tsx`](src/app/page.tsx). Global colors, typography, spacing, and responsive styles are defined in [`src/app/globals.css`](src/app/globals.css) and the Tailwind configuration.
 
-## Deploy on Vercel
+Before deploying, update the metadata in [`src/app/layout.tsx`](src/app/layout.tsx), replace placeholder links or project details, and add your own repository URL above.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Verify the application locally with a production build:
+
+```bash
+npm run build
+npm start
+```
+
+## Deployment
+
+This project can be deployed to [Vercel](https://vercel.com/), the platform created by the Next.js team. Import the repository, keep the detected Next.js settings, and deploy. Other hosts that support Node.js can run the same `npm run build` and `npm start` commands.
+
+## License
+
+This portfolio is a personal project. Add a license here if you plan to distribute or reuse the source code.
